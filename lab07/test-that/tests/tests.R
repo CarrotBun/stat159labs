@@ -16,7 +16,7 @@ test_that("range works as expected", {
 test_that("range works as expected", {
   y <- c(1, 2, 3, 4, NA)
   
-  expect_equal(range_value(y), NA_real_)
+  expect_equal(range_value(y), 3)
   expect_length(range_value(y), 1)
 })
 
@@ -34,8 +34,11 @@ test_that("range works as expected", {
   expect_error(range_value(w), 'non-numeric argument to binary operator')
 })
 
-
+##########################################################################
 # assuming that your working directory is "test-that/"
-# from the R console
 #library(testthat)
-#test_file("tests.R")
+#setwd("~/stat159/labs/lab07/test-that")
+#test_file("tests/tests.R")
+
+
+
