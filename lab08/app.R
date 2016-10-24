@@ -14,7 +14,7 @@ ui <- fluidPage(
   headerPanel('Choose an advertising budget.'),
   sidebarLayout(
     sidebarPanel(
-      selectInput('xcol', 'X Variable', choices = c("TV", "Radio", "Newspaper"))),
+      selectInput('xcol', 'Advertising Channel', choices = c("TV", "Radio", "Newspaper"))),
     mainPanel(
       plotOutput('sales_plot')
     )
@@ -30,10 +30,10 @@ server <- function(input, output) {
   output$sales_plot <- renderPlot({
     plot(selectedData(),
          col = blues9,
-         pch = 20, cex = 2)
+         pch = 20, cex = 2,
+         main = "Relationship to Sales")
   }, height = 500, width = 600)
   
 }
-
 
 shinyApp(ui = ui, server = server)
