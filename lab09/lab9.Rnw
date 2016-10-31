@@ -100,7 +100,7 @@ xtable(reg_quality)
 \begin{figure}
 \centering
 \includegraphics[%
-width=0.5\textwidth]{scatterplot-tv-sales.png}
+width=0.8\textwidth]{scatterplot-tv-sales.png}
 \caption{\label{fig:Scatter}Scatterplot of TV and Sales.}
 \end{figure}
 
