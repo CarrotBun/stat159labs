@@ -70,6 +70,7 @@ width=0.5\textwidth]{histogram-sales.png}
 \caption{\label{fig:DsnSales}Distributions of Sales.}
 \end{figure}
 
+\pagebreak
 
 \section{Methodology}
 
@@ -103,7 +104,7 @@ width=0.5\textwidth]{scatterplot-tv-sales.png}
 \caption{\label{fig:Scatter}Scatterplot of TV and Sales.}
 \end{figure}
 
-
+\pagebreak
 
 \section{Conclusion}
 
