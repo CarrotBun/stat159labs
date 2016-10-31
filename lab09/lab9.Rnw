@@ -10,22 +10,22 @@
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
  breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
  {hyperref}
-\hypersetup{
- pdfstartview={XYZ null null 1}}
+\hypersetup{pdfstartview={XYZ null null 1}}
 \usepackage{breakurl}
 \usepackage{graphicx}
+
+
+
 \begin{document}
-\SweaveOpts{concordance=TRUE}
-<<setup, include=FALSE, cache=FALSE>>=
+
+<<setup, include=FALSE, echo = FALSE, cache=FALSE>>=
 library(knitr)
 # set global chunk options
-opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
-options(formatR.arrow=TRUE,width=90)
+
 @
-
-\title{Advertising Data Report (HW3)}
-
+\title{Advertising Data Report}
 \author{Lily Li}
+\maketitle
 
 \section{Abstract}
 
@@ -49,6 +49,7 @@ The Advertising dataset contains data on sales (in thousands of units) for a par
 This dataset has information on TV, Radio, and Newspaper budgets. On this paper, we will focus on the relationship between \emph{TV budget} and \emph{product sales}.  
 
 Some preliminary analysis of the dataset include:  
+
 
 \begin{itemize}
 \item there are 200 observations of each TV budget and sales
@@ -82,17 +83,18 @@ To estimate the coefficients $\beta_0$ and $\beta_1$, we use the least squares m
 
 \section{Results}
 
-<<setup of tables, echo = FALSE>>=
-library(xtable)
+<<setup of tables, echo = FALSE, include = FALSE>>=
 library(knitr)
 load("regression.RData")
 @
 After computing the regression, we found the following results: 
 
-<<tables, fig.width=4, fig.height=4, echo = FALSE>>=
-print(xtable(summary(reg_TV.Sales)), type = "latex", comment = FALSE)
-print(xtable(reg_quality), type = "latex", comment = F)
+<<tables, echo = FALSE, results = 'asis'>>=
+library(xtable)
+print(xtable(summary(reg_TV.Sales)))
+xtable(reg_quality)
 @
+
 
 \begin{figure}
 \centering
@@ -100,6 +102,7 @@ print(xtable(reg_quality), type = "latex", comment = F)
 width=0.5\textwidth]{scatterplot-tv-sales.png}
 \caption{\label{fig:Scatter}Scatterplot of TV and Sales.}
 \end{figure}
+
 
 
 \section{Conclusion}
